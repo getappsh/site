@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: landscape-ingress
+  namespace: landscape
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: site.apps.getapp.sh
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: landscape-service
+            port:
+              number: 80
+  tls:
+    - hosts:
+        - site.apps.getapp.sh
+      secretName: site
+
