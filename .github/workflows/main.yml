@@ -107,5 +107,6 @@ jobs: ##
           helm upgrade --install $NAMESPACE ./k8s/helm/landscape \
             --namespace $NAMESPACE \
             --set imageTag=$RELEASE_TAG
+            --create-namespace
 
         
