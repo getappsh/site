@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: landscape-deployment
-  namespace: landscape
+  name: site-deployment
+  namespace: site
   labels:
-    app: landscape
+    app: site
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: landscape
+      app: site
   template:
     metadata:
       labels:
-        app: landscape
+        app: site
     spec:
       containers:
-      - name: landscape
-        image: "harbor.getapp.sh/getapp-dev/landscape:{{ .Values.imageTag }}"
+      - name: site
+        image: "harbor.getapp.sh/getapp-dev/site:{{ .Values.imageTag }}"
         ports:
         - containerPort: 8000

@@ -3,9 +3,9 @@ name: Create full Release
 on:
   push:
     branches:
-      - main
+      - master
 env:
-  NAMESPACE: landscape ###  the namespace where you want to deploy the test environment
+  NAMESPACE: site ###  the namespace where you want to deploy the test environment
 
 jobs: ##
   calculate_new_tag:
@@ -101,7 +101,7 @@ jobs: ##
       - name: Deploy to kubernetes 
         env:
           RELEASE_TAG: ${{ needs.calculate_new_tag.outputs.tag }}
-          NAMESPACE: landscape
+          NAMESPACE: site
         run: |
           echo "$RELEASE_TAG"
           helm upgrade --install $NAMESPACE ./k8s/helm/landscape \
