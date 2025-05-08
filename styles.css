@@ -199,6 +199,117 @@ header {
     }
 }
 
+.editions-comparison {
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    background: var(--card-background);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.editions-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.editions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.edition {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: var(--background);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.edition:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.edition-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.edition-header i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.edition-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.edition-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.edition-tag.premium {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+.features-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.features-list li i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.contact-btn i {
+    margin-right: 0.5rem;
+}
+
+.contact-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -209,6 +320,20 @@ header {
     }
     
     .card {
+        padding: 1.5rem;
+    }
+
+    .editions-comparison {
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .editions-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .edition {
         padding: 1.5rem;
     }
 }
